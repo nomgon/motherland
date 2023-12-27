@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "motherland",
+    "slug": "motherland",
+    "version": "1.0.2",
+    "orientation": "portrait",
+    "icon": "./assets/images/adaptive-icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "school.siip.motherland",
+      "buildNumber": "1.0.2"
+    },
+    "android": {
+      "versionCode": 1,
+      "package": "school.siip.motherland",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "usesCleartextTraffic": true
+          }
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "b755735e-1295-484e-9631-af25d4bb1d2a"
+      }
+    }
+  }
+}
