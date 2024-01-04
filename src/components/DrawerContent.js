@@ -6,11 +6,16 @@ import { Feather } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import UserContext from "../context/UserContext";
 import { SimpleLineIcons } from "@expo/vector-icons";
-import Target from "../screens/Target";
+// import Target from "../screens/Target";
+import { useNavigation, DrawerActions } from "@react-navigation/native";
 
 const DrawerContent = (props) => {
   const state = useContext(UserContext);
-
+  const navigation = useNavigation();
+  const closeDrawer = () => {
+    // props.navigation.closeDrawer();
+    navigation.dispatch(DrawerActions.closeDrawer());
+  };
   return (
     <View style={{ flex: 1 }}>
       <DrawerContentScrollView {...props}>
@@ -32,14 +37,20 @@ const DrawerContent = (props) => {
           <Drawer.Section>
             <DrawerItem
               label="Жагсаалт"
-              onPress={() => props.navigation.navigate("Үүсгэн байгуулагчид")}
+              onPress={() => {
+                closeDrawer();
+                props.navigation.navigate("Үүсгэн байгуулагчид");
+              }}
               icon={() => <Feather name="list" size={20} color="black" />}
             />
           </Drawer.Section>
           <Drawer.Section>
             <DrawerItem
               label="Зорилго"
-              onPress={() => props.navigation.navigate("Зорилго")}
+              onPress={() => {
+                closeDrawer();
+                props.navigation.navigate("Зорилго");
+              }}
               icon={() => <Feather name="target" size={20} color="black" />}
             />
           </Drawer.Section>
@@ -50,7 +61,10 @@ const DrawerContent = (props) => {
                   <Drawer.Section>
                     <DrawerItem
                       label="Нэмж оруулах"
-                      onPress={() => props.navigation.navigate("Нэмж оруулах")}
+                      onPress={() => {
+                        closeDrawer();
+                        props.navigation.navigate("Нэмж оруулах");
+                      }}
                       icon={() => (
                         <AntDesign name="addfile" size={20} color="black" />
                       )}
@@ -60,7 +74,10 @@ const DrawerContent = (props) => {
                 <Drawer.Section>
                   <DrawerItem
                     label="Тохиргоо"
-                    onPress={() => props.navigation.navigate("Тохиргоо")}
+                    onPress={() => {
+                      closeDrawer();
+                      props.navigation.navigate("Тохиргоо");
+                    }}
                     icon={() => (
                       <AntDesign name="setting" size={20} color="black" />
                     )}
@@ -69,7 +86,10 @@ const DrawerContent = (props) => {
 
                 <DrawerItem
                   label="Гарах"
-                  onPress={() => state.logout()}
+                  onPress={() => {
+                    closeDrawer();
+                    state.logout();
+                  }}
                   icon={() => (
                     <AntDesign name="logout" size={20} color="black" />
                   )}
@@ -80,7 +100,10 @@ const DrawerContent = (props) => {
                 <Drawer.Section>
                   <DrawerItem
                     label="Бүртгэл"
-                    onPress={() => props.navigation.navigate("Бүртгэл")}
+                    onPress={() => {
+                      closeDrawer();
+                      props.navigation.navigate("Бүртгэл");
+                    }}
                     icon={() => (
                       <AntDesign name="setting" size={20} color="black" />
                     )}
@@ -90,6 +113,7 @@ const DrawerContent = (props) => {
                 <DrawerItem
                   label="Нэвтрэх"
                   onPress={() => {
+                    closeDrawer();
                     props.navigation.navigate("Нэвтрэх");
                   }}
                   icon={() => (

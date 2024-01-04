@@ -7,7 +7,7 @@ const Spinner = ({ showText = true }) => {
       <ActivityIndicator size="large" color="#99AAAB" />
       {showText && (
         <Text style={{ top: 10, fontWeight: "bold", fontSize: 18 }}>
-          Just a moment please...
+          Сэрвэрээс ачаалж байна...
         </Text>
       )}
     </View>

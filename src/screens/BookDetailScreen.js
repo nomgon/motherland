@@ -29,7 +29,7 @@ const BookDetailScreen = (props) => {
           deleteBook(book._id)
             .then((result) => {
               console.log("Book is removed as successfully.", result.data.data);
-              props.navigation.navigate("Home", {
+              props.navigation.navigate("Үүсгэн байгуулагчид", {
                 deletedBook: result.data.data,
               });
             })
